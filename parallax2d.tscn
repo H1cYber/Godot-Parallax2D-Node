@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=3 uid="uid://c3ihqt6fgvp8l"]
+
+[ext_resource type="Script" uid="uid://dhi0nlguni5s4" path="res://parallax2d.gd" id="1_j6tv8"]
+[ext_resource type="Texture2D" uid="uid://bym2aelvttyk" path="res://layers/parallax-mountain-bg.png" id="1_qkk44"]
+[ext_resource type="Texture2D" uid="uid://cvlxelfejck5u" path="res://layers/parallax-mountain-montain-far.png" id="2_5a1gx"]
+[ext_resource type="Texture2D" uid="uid://6rggbmvt7gur" path="res://layers/parallax-mountain-foreground-trees.png" id="2_shc1s"]
+[ext_resource type="Texture2D" uid="uid://dtsgncsoxiy84" path="res://layers/parallax-mountain-mountains.png" id="3_j6tv8"]
+[ext_resource type="Texture2D" uid="uid://bi1mwyy8176e8" path="res://layers/parallax-mountain-trees.png" id="4_gap0b"]
+
+[node name="Parallax" type="Node2D"]
+script = ExtResource("1_j6tv8")
+
+[node name="Background" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.1, 1)
+repeat_size = Vector2(816, 0)
+autoscroll = Vector2(20, 0)
+
+[node name="Parallax-mountain-bg" type="Sprite2D" parent="Background"]
+position = Vector2(408, 240)
+scale = Vector2(3, 3)
+texture = ExtResource("1_qkk44")
+
+[node name="MontainFar" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.4, 1)
+repeat_size = Vector2(816, 0)
+autoscroll = Vector2(40, 0)
+
+[node name="Parallax-mountain-montain-far" type="Sprite2D" parent="MontainFar"]
+position = Vector2(408, 240)
+scale = Vector2(3, 3)
+texture = ExtResource("2_5a1gx")
+
+[node name="Mountains" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.8, 1)
+repeat_size = Vector2(1632, 0)
+autoscroll = Vector2(60, 0)
+
+[node name="Parallax-mountain-mountains" type="Sprite2D" parent="Mountains"]
+position = Vector2(816, 240)
+scale = Vector2(3, 3)
+texture = ExtResource("3_j6tv8")
+
+[node name="Trees" type="Parallax2D" parent="."]
+scroll_scale = Vector2(1.4, 1)
+repeat_size = Vector2(1632, 0)
+autoscroll = Vector2(80, 0)
+
+[node name="Parallax-mountain-trees" type="Sprite2D" parent="Trees"]
+position = Vector2(816, 240)
+scale = Vector2(3, 3)
+texture = ExtResource("4_gap0b")
+
+[node name="ForegroundTrees" type="Parallax2D" parent="."]
+scroll_scale = Vector2(2, 1)
+repeat_size = Vector2(1632, 0)
+autoscroll = Vector2(100, 0)
+
+[node name="Parallax-mountain-foreground-trees" type="Sprite2D" parent="ForegroundTrees"]
+position = Vector2(816, 240)
+scale = Vector2(3, 3)
+texture = ExtResource("2_shc1s")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(408, 240)
